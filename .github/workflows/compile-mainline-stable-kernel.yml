@@ -179,10 +179,12 @@ jobs:
 
       - name: Clone custom config
         run: |
-          git clone --depth 1 --branch "${{ env.CONFIG_BRANCH }}" "${{ env.CONFIG_REPO }}"
-          
           echo "Run pwd:"
           pwd
+          echo "Run ls -la"
+          ls -la
+          
+          git clone --depth 1 --branch "${{ env.CONFIG_BRANCH }}" "${{ env.CONFIG_REPO }}"
           
           echo "Run ls -la"
           ls -la
