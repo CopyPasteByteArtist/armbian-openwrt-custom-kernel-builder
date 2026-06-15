@@ -88,10 +88,10 @@ on:
       kernel_config:
         description: "Set the path of kernel .config"
         required: false
-        default: "kernel/kernel-config/release/stable"
+        default: "kernel-config/release/stable"
         type: choice
         options:
-          - kernel/kernel-config/release/stable
+          - kernel-config/release/stable
           - false
 
 env:
