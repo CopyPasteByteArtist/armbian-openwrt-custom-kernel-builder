@@ -88,10 +88,10 @@ on:
       kernel_config:
         description: "Set the path of kernel .config"
         required: false
-        default: "kernel-config/release/stable"
+        default: "kernel/kernel-config/release/stable"
         type: choice
         options:
-          - kernel-config/release/stable
+          - kernel/kernel-config/release/stable
           - false
 
 env:
@@ -184,10 +184,10 @@ jobs:
           echo "Run ls -la"
           ls -la
           
-          git clone --depth 1 --branch "${{ env.CONFIG_BRANCH }}" "${{ env.CONFIG_REPO }}"
+          git clone --depth 1 --branch "${{ env.CONFIG_BRANCH }}" "${{ env.CONFIG_REPO }}" /builder
           
-          echo "Run ls -la"
-          ls -la
+          echo "Run ls -la /builder"
+          ls -la /builder
 
       - name: Get kernel source commit hash
         id: kernelhash
